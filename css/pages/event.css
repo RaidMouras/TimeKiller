@@ -1,0 +1,139 @@
+/* Main Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: normal;
+}
+
+/* Main content container */
+.container.mb-5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 180px);
+    margin-bottom: 30px !important;
+}
+
+.container.mb-5 .row {
+    flex: 1;
+    display: flex;
+    height: 100%;
+}
+
+/* Column containers */
+.container.mb-5 .col-md-3,
+.container.mb-5 .col-md-9 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 12px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: normal;
+    font-size: 1rem;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.sidebar-nav a.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+}
+
+/* Main Content Styles */
+.main-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: normal;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    letter-spacing: normal;
+}
+
+/* Card styles */
+.card {
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container.mb-5 {
+        padding: 15px;
+    }
+    
+    .sidebar {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .card {
+        margin-top: 15px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+} 

@@ -1,0 +1,58 @@
+# Special configuration for views directory
+
+# Enable proper MIME types for different files
+AddType application/javascript .js
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType image/svg+xml .svgz
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+
+# Force js files to be interpreted as JavaScript
+<FilesMatch "\.js$">
+  ForceType application/javascript
+  Header set Content-Type "application/javascript; charset=UTF-8"
+  Header unset X-Content-Type-Options
+</FilesMatch>
+
+# Force CSS files to be interpreted as CSS
+<FilesMatch "\.css$">
+  ForceType text/css
+  Header set Content-Type "text/css; charset=UTF-8"
+</FilesMatch>
+
+# Prevent PHP execution in upload folders (if applicable)
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css|svg|ttf|woff|woff2)$">
+  <IfModule mod_php5.c>
+    php_flag engine off
+  </IfModule>
+  <IfModule mod_php7.c>
+    php_flag engine off
+  </IfModule>
+  <IfModule mod_php.c>
+    php_flag engine off
+  </IfModule>
+</FilesMatch>
+
+# CORS support
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# Make files cacheable but not for too long
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType application/font-woff "access plus 1 month"
+  ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript image/svg+xml
+</IfModule> 

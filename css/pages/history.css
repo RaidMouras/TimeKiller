@@ -1,0 +1,360 @@
+/* Main Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: normal;
+}
+
+/* Main content container */
+.container.mb-5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 180px);
+    margin-bottom: 30px;
+}
+
+.container.mb-5 .row {
+    flex: 1;
+    display: flex;
+    height: 100%;
+}
+
+/* Column containers */
+.container.mb-5 .col-md-3,
+.container.mb-5 .col-md-9 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 12px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: normal;
+    font-size: 1rem;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.sidebar-nav a.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+}
+
+/* Main Content Styles */
+.main-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: normal;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    letter-spacing: normal;
+}
+
+/* 确保所有文本字体保持一致 */
+.purchase-card, 
+.purchase-details h3, 
+.purchase-details .service-name,
+.purchase-status,
+.purchase-date,
+.purchase-id,
+.status-label,
+.action-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: normal;
+}
+
+/* Purchase Card Styles */
+.purchase-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hidden purchase cards initially */
+.hidden-purchase {
+    display: none;
+}
+
+/* Show More/Less button styles */
+#show-more-btn,
+#show-less-btn {
+    padding: 10px 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+#show-more-btn:hover,
+#show-less-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Fade-in animation for showing hidden purchases */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.purchase-card.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.purchase-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.purchase-header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.business-image {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+}
+
+.business-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.purchase-details {
+    flex: 1;
+}
+
+.purchase-details h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.purchase-details .service-name {
+    color: #666;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.purchase-status {
+    text-align: right;
+    margin-left: 15px;
+}
+
+.purchase-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.purchase-id {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.status-label {
+    font-size: 14px;
+}
+
+.status-label span {
+    font-weight: bold;
+}
+
+.status-label .complete {
+    color: green;
+}
+
+.status-label .pending {
+    color: orange;
+}
+
+.status-label .cancelled {
+    color: red;
+}
+
+.purchase-actions {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px 15px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-btn:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+.action-btn:hover {
+    background-color: #e0e0e0;
+    text-decoration: none;
+}
+
+.comment-btn:hover {
+    color: #007bff;
+}
+
+.book-again-btn:hover {
+    color: #28a745;
+}
+
+/* Rating stars styles */
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 0.1rem;
+}
+
+.rating-input input:checked ~ label,
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: #ffc107;
+}
+
+.rating-input input:checked + label {
+    color: #ffc107;
+}
+
+/* Modal styles */
+.modal-dialog {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.stars i {
+    color: #ffc107;
+    font-size: 1rem;
+    margin-right: 0.1rem;
+}
+
+.stars i.far {
+    color: #ddd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container.mb-5 {
+        padding: 15px;
+    }
+    
+    .sidebar {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .purchase-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .business-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .purchase-details {
+        margin-bottom: 15px;
+    }
+    
+    .purchase-status {
+        margin-left: 0;
+        text-align: center;
+    }
+} 

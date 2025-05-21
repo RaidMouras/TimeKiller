@@ -1,0 +1,344 @@
+/* Star Rating Input */
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 0.1rem;
+}
+
+.rating-input input:checked~label,
+.rating-input label:hover,
+.rating-input label:hover~label {
+    color: #ffc107;
+}
+
+.rating-input input:checked+label {
+    color: #ffc107;
+}
+
+/* Success/Error Messages */
+.alert-success,
+.alert-danger {
+    margin-top: 1rem;
+}
+
+/* Review form styling */
+.review-form {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+/* Reply styling */
+.replies {
+    border-left: 3px solid #eee;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.reply {
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.reply-form {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.reply-author {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.reply-content {
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.reply-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Image carousel styling */
+.carousel-container {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+/* Custom carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #0056b3;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Business profile image */
+.business-profile img {
+    width: 60px;
+    height: 60px;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.disabled-review {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.disabled-review .form-control,
+.disabled-review .rating-input label {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.disabled-review .btn {
+    cursor: not-allowed;
+}
+
+/* User Profile Card Styles */
+.user-profile-card {
+    position: fixed;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.95);
+    display: none;
+    top: 50%;
+    left: 50%;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.user-profile-card.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.user-profile-card .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.user-profile-card .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.user-profile-card .close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-profile-card .profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: -45px auto 10px;
+    border: 4px solid white;
+    display: block;
+    background-color: #f8f9fa;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-card .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.user-profile-card .username {
+    font-size: 1.4rem;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+.user-profile-card .user-badge {
+    margin-bottom: 15px;
+}
+
+.user-profile-card .bio {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.user-profile-card .card-footer {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* User stats styling */
+.user-stats {
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    padding: 0 10px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+/* Make user avatars in reviews clickable */
+.user-avatar {
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Overlay for user profile card */
+.profile-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.profile-card-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Pricing section styling */
+.pricing-card h3 {
+    line-height: 1.2;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* User info styling */
+.user-info {
+    margin-bottom: 15px;
+}
+
+.info-item {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    color: #343a40;
+    word-break: break-word;
+}
+
+.bio-text {
+    white-space: pre-line;
+    font-size: 0.95rem;
+    max-height: 150px;
+    overflow-y: auto;
+}
